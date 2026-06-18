@@ -1,0 +1,29 @@
+import type { ReactNode } from "react";
+
+/**
+ * A classic Windows-style window frame (title bar + raised body) built on
+ * 98.css. Used to box each dashboard panel.
+ */
+export function Window({
+  title,
+  children,
+  className,
+}: {
+  title: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`window ${className ?? ""}`}>
+      <div className="title-bar">
+        <div className="title-bar-text">{title}</div>
+        <div className="title-bar-controls">
+          <button aria-label="Minimize" />
+          <button aria-label="Maximize" />
+          <button aria-label="Close" />
+        </div>
+      </div>
+      <div className="window-body">{children}</div>
+    </div>
+  );
+}
