@@ -60,3 +60,199 @@ table.dense th.num {
   background: #ffffff;
   padding: 6px 8px;
 }
+
+/* ---------------------------------------------------------------------------
+   Chrome elements (menu bar, title strip, progress bar, theme switcher).
+   Defined as classes so each theme can restyle them. These defaults are the
+   classic Windows 98 look.
+   --------------------------------------------------------------------------- */
+.menubar {
+  background: #c0c0c0;
+  border-bottom: 1px solid #808080;
+}
+
+.menuitem {
+  cursor: default;
+}
+
+.titlestrip {
+  color: #ffffff; /* readable on the teal desktop */
+}
+
+.progress {
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: #ffffff;
+  height: 14px;
+  padding: 1px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #000080;
+}
+
+.theme-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ===========================================================================
+   THEME: Neo-Brutalism (RetroUI-inspired)
+
+   Thick black borders, hard offset shadows (no blur), saturated accents, and
+   bold uppercase labels. Reskins the exact same dashboard markup so it can be
+   compared 1:1 against the classic theme via the Theme switcher.
+   =========================================================================== */
+html[data-theme="neo"] {
+  --neo-ink: #111111;
+  --neo-bg: #f3f1e7;
+  --neo-accent: #ffd23f; /* signature yellow */
+  --neo-accent-2: #a78bfa; /* violet */
+  --neo-pos: #15803d;
+  --neo-neg: #dc2626;
+  --neo-shadow: 5px 5px 0 0 var(--neo-ink);
+  --neo-shadow-sm: 3px 3px 0 0 var(--neo-ink);
+}
+
+html[data-theme="neo"] body {
+  background: var(--neo-bg);
+  color: var(--neo-ink);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 13px;
+}
+
+html[data-theme="neo"] .menubar {
+  background: #ffffff;
+  border-bottom: 3px solid var(--neo-ink);
+}
+
+html[data-theme="neo"] .menuitem {
+  font-weight: 700;
+}
+
+html[data-theme="neo"] .titlestrip {
+  color: var(--neo-ink);
+  background: var(--neo-accent);
+  border-bottom: 3px solid var(--neo-ink);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+html[data-theme="neo"] .window {
+  background: #ffffff;
+  border: 3px solid var(--neo-ink);
+  border-radius: 6px;
+  box-shadow: var(--neo-shadow);
+  padding: 0;
+}
+
+html[data-theme="neo"] .title-bar {
+  background: var(--neo-accent);
+  color: var(--neo-ink);
+  border-bottom: 3px solid var(--neo-ink);
+  border-radius: 3px 3px 0 0;
+  padding: 4px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+html[data-theme="neo"] .title-bar-text {
+  color: var(--neo-ink);
+  font-weight: 800;
+}
+
+html[data-theme="neo"] .title-bar-controls button {
+  border: 2px solid var(--neo-ink);
+  border-radius: 3px;
+  background: #ffffff;
+  box-shadow: 2px 2px 0 0 var(--neo-ink);
+  min-width: 18px;
+  height: 18px;
+}
+
+html[data-theme="neo"] .window-body {
+  margin: 10px;
+}
+
+html[data-theme="neo"] .well {
+  border: 2px solid var(--neo-ink);
+  border-color: var(--neo-ink);
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: var(--neo-shadow-sm);
+  padding: 8px 10px;
+}
+
+html[data-theme="neo"] fieldset {
+  border: 2px solid var(--neo-ink);
+  border-radius: 4px;
+}
+
+html[data-theme="neo"] legend {
+  background: var(--neo-accent-2);
+  color: var(--neo-ink);
+  border: 2px solid var(--neo-ink);
+  border-radius: 3px;
+  padding: 1px 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+html[data-theme="neo"] table.dense th {
+  border-bottom: 2px solid var(--neo-ink);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+}
+
+html[data-theme="neo"] table.dense td {
+  border-bottom: 1px solid #e6e4d8;
+}
+
+html[data-theme="neo"] .pos {
+  color: var(--neo-pos);
+  font-weight: 700;
+}
+
+html[data-theme="neo"] .neg {
+  color: var(--neo-neg);
+  font-weight: 700;
+}
+
+html[data-theme="neo"] .progress {
+  border: 2px solid var(--neo-ink);
+  border-color: var(--neo-ink);
+  border-radius: 4px;
+  background: #ffffff;
+  box-shadow: 2px 2px 0 0 var(--neo-ink);
+  height: 16px;
+  padding: 2px;
+}
+
+html[data-theme="neo"] .progress-bar {
+  background: #22c55e;
+  border-radius: 2px;
+}
+
+html[data-theme="neo"] .status-bar {
+  background: #ffffff;
+  border-top: 3px solid var(--neo-ink);
+}
+
+html[data-theme="neo"] .status-bar-field {
+  border: none;
+  border-right: 2px solid var(--neo-ink);
+  font-weight: 600;
+}
+
+html[data-theme="neo"] .theme-switcher select {
+  border: 2px solid var(--neo-ink);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 0 var(--neo-ink);
+  background: #ffffff;
+  font-weight: 700;
+  padding: 1px 4px;
+}

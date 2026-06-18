@@ -1,5 +1,6 @@
 import { Window } from "@/components/Window";
 import { ProgressBar } from "@/components/ProgressBar";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import {
   getFinancialSummary,
   getFitnessSummary,
@@ -28,21 +29,22 @@ export default async function DashboardPage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Menu bar */}
-      <div
-        role="menubar"
-        className="flex gap-4 px-2 py-1"
-        style={{ background: "#c0c0c0", borderBottom: "1px solid #808080" }}
-      >
-        {["File", "Edit", "View", "Tools", "Help"].map((m) => (
-          <span key={m} style={{ cursor: "default" }}>
-            <u>{m[0]}</u>
-            {m.slice(1)}
-          </span>
-        ))}
+      <div role="menubar" className="menubar flex items-center gap-4 px-2 py-1">
+        <div className="flex gap-4">
+          {["File", "Edit", "View", "Tools", "Help"].map((m) => (
+            <span key={m} className="menuitem">
+              <u>{m[0]}</u>
+              {m.slice(1)}
+            </span>
+          ))}
+        </div>
+        <div className="ml-auto">
+          <ThemeSwitcher />
+        </div>
       </div>
 
       {/* Title strip */}
-      <div className="px-2 py-1 text-white font-bold">
+      <div className="titlestrip px-2 py-1 font-bold">
         BrandonOS — Daily Snapshot
       </div>
 
