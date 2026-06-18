@@ -1,0 +1,62 @@
+/* 98.css provides the core classic Windows widget styling (buttons, windows,
+   fields, etc). Tailwind's preflight is intentionally NOT imported so it can't
+   reset 98.css's look; we only pull in Tailwind's utility layer for layout. */
+@import "98.css/dist/98.css";
+
+@tailwind utilities;
+
+:root {
+  --desktop: #008080; /* classic teal */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--desktop);
+  /* 98.css sets the pixelated MS Sans Serif font stack on its components. */
+  font-size: 12px;
+}
+
+/* Dense, scannable tables — the workhorse of the dashboard. */
+table.dense {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.dense th,
+table.dense td {
+  text-align: left;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+
+table.dense th {
+  font-weight: bold;
+}
+
+table.dense td.num,
+table.dense th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.pos {
+  color: #008000;
+}
+
+.neg {
+  color: #800000;
+}
+
+/* A sunken well for grouping readouts inside a window. */
+.well {
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: #ffffff;
+  padding: 6px 8px;
+}
